@@ -2,12 +2,24 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: rgb(190, 227, 236);
+  background-color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.slot_inner {
+  padding: 10px 0;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 200;
+  /* color: coral; */
+  /* background-color: rgb(233, 100, 100); */
+  font-size: 0.9rem;
+  margin-bottom: 150px;
+  margin-bottom: 10px;
 }
 
 .heading_style {
@@ -16,77 +28,26 @@ code {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 500;
-  color: rgb(11, 241, 184);
-  background-color: rgb(102, 126, 118);
+  color: rgb(12, 128, 99);
+  background-color: whitesmoke;
   font-size: 1rem;
   margin-bottom: 30px;
 
 }
 
-.cards {
-  width: 100%;
-  height: auto;
-}
-
-.card {
+.slotmachine{
   margin: 6%;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
-  background-color: #fff;
-  width: 21.25%;
+  background-color: #d18a8a;
+  width: 35%;
   border-radius: 12px;
   box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
-  float: left;
-}
-
-.card:hover {
-  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
-  transform: scale(1.05, 1.05);
-
-}
-
-.card__img {
-  width: 100%;
-  height: 235px;
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
-}
-
-.card__info {
-  background-color: #fff;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
   padding: 16px 24px 24px 24px;
-  background-color: #fff;
+  -ms-flex-align: center;
 }
 
-.card__category {
-  font-family: Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 2px;
-  font-weight: 500;
-  color: rgb(159, 184, 184);
-  background-color: aliceblue;
-}
 
-.card__title {
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  text-transform: uppercase;
-}
 
-button {
-  padding: 5px 8px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 500;
-  color: #a76a6a;
-  background-color: #fff;
-  outline: none;
-  border: 1px solid black;
-  cursor: pointer;
-}
+
 
 @media (max-width: 786px) {}
