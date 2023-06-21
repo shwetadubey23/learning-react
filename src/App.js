@@ -1,24 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import './index.css'
-import SlotM from "./SlotM";
-
+// import SlotM from "./SlotM";
 
 
 function App() {
+    let newTime = new Date().toLocaleTimeString()
+    const [changeTime, setNewTime]  = useState(newTime);
+   
+    const upDate = () => {
+        newTime = new Date().toLocaleTimeString()
+        setNewTime(newTime)
+    }
+    
     return (
-        <>
-            <h1 className="heading_style"> 🎰 Welcome to 🎰 <span style={{ fontWeight: 'bold' }} > Slot machine game </span>
-
-            </h1>
-            <div className="slotmachine">
-              
-                <SlotM x='😄' y='😄' z='😄' />
-                <hr />
-                <SlotM x='😄' y='👼' z='⏰' />
-                <hr />
-                <SlotM x='⚖️' y='✈️' z='🥇' />
-               
-
+        <> 
+         
+            <div className="div_style">
+              <h1 > {changeTime} </h1>
+<button className="button" onClick={upDate}>GET TIME</button>
             </div>
         </>
     )
