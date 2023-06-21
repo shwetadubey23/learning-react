@@ -1,27 +1,22 @@
 import React, { useState } from "react";
-import './index.css'
-// import SlotM from "./SlotM";
 
+import './index.css';
 
-function App() {
-    let newTime = new Date().toLocaleTimeString()
-    const [changeTime, setNewTime]  = useState(newTime);
-   
-    const upDate = () => {
-        newTime = new Date().toLocaleTimeString()
-        setNewTime(newTime)
-    }
-    
+const App = () => {
+    let time = new Date().toLocaleTimeString()
+const [currentTime, setTime] = useState(time)
+
+const updateTime = () => {
+    time = new Date().toLocaleTimeString()
+    setTime(time)
+}
+
+setInterval(updateTime, 1000)
     return (
-        <> 
-         
-            <div className="div_style">
-              <h1 > {changeTime} </h1>
-<button className="button" onClick={upDate}>GET TIME</button>
-            </div>
+        <>
+        <h1 className="h1_style"> {currentTime} </h1>
         </>
     )
 }
 
 export default App
-
