@@ -1,22 +1,30 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import './index.css'
 
-import './index.css';
-
+/*Single source of trueth Ek hi vairiable ko multiple time access karna*/
 const App = () => {
-    let time = new Date().toLocaleTimeString()
-const [currentTime, setTime] = useState(time)
 
-const updateTime = () => {
-    time = new Date().toLocaleTimeString()
-    setTime(time)
+    const [initial, setUpdate] = useState("")
+    const [fullName, setFullName] = useState()
+
+const name = (event) => {
+    setUpdate(event.target.value)
 }
 
-setInterval(updateTime, 1000)
-    return (
-        <>
-        <h1 className="h1_style"> {currentTime} </h1>
-        </>
-    )
+const onSubmit = () => {
+    setFullName(initial)
+}
+
+return (
+    <>
+    <div className='div_style'>
+<h1 >  Hello {fullName} </h1>
+<input className='input' type='text' placeholder='Enter your name' onChange={name} value= {initial}/>  
+<button className='button' onClick={onSubmit}> Click Me </button>
+    </div>
+    </>
+)
+
 }
 
 export default App
