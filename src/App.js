@@ -4,26 +4,45 @@ import './index.css'
 /*Single source of trueth Ek hi vairiable ko multiple time access karna*/
 const App = () => {
 
-    const [initial, setUpdate] = useState("")
-    const [fullName, setFullName] = useState()
+    const [initialName, setInitialName] = useState("");
+    const [firstName, setfirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [ fullName, setFullName] = useState("");
 
-const name = (event) => {
-    setUpdate(event.target.value)
-}
+    const onSubmit = (event) => {
+        event.preventDefault()
+        setLastName(initialName)
+        setFullName(firstName)
+    };
 
-const onSubmit = () => {
-    setFullName(initial)
-}
+    const inputEvent = (event) => {
+        setInitialName(event.target.value)
 
-return (
-    <>
-    <div className='div_style'>
-<h1 >  Hello {fullName} </h1>
-<input className='input' type='text' placeholder='Enter your name' onChange={name} value= {initial}/>  
-<button className='button' onClick={onSubmit}> Click Me </button>
-    </div>
-    </>
-)
+    }
+
+
+    const secondInputEvent = (event) => {
+setfirstName(event.target.value)
+    }
+
+    return (
+        <>
+            <div>
+                <form onSubmit={onSubmit}>
+                    <div className='div_style'>
+                        <h1 >  Hello {lastName} {fullName} </h1>
+
+                        <input className='input' type='text' placeholder='Enter your firstName' onChange={inputEvent} value={initialName} />
+                        <input className='input' type='text' placeholder='Enter your lasttName' onChange={secondInputEvent} value={firstName} />
+                        <br />
+
+                        <button className='button' type="submit" > Submit </button>
+
+                    </div>
+                </form>
+            </div>
+        </>
+    )
 
 }
 
