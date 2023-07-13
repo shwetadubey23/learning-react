@@ -1,33 +1,17 @@
-import React, {useState} from 'react'
-import './index.css'
-const App = () => {
-const [valueIncrem, setValueIncrem] = useState(0)
+import React from 'react'
+import Accordion from './Component/accordion/Accordion'
 
-  const incrNum = () => {
-setValueIncrem(valueIncrem+1)
-  }
 
-  const decreNum = () => {
-    if(valueIncrem === 0){
-      alert("reached 0 limite")
-    } else
-    setValueIncrem(valueIncrem-1)
-  }
 
-return (
-  <>
-  <div className='main_div'>
-    <div className='center_div'>
-<h1 className='h1'> {valueIncrem} </h1>
+
+export default function App() {
   
-   <div className='btn_div'>
-    <button className='button' onClick={incrNum}>Incriment</button>
-    <button className='button' onClick={decreNum}>Decrement</button>
+  return (
+    <>
+    <div >
+<Accordion/>
     </div>
-  </div>
-  </div>
-  </>
-)
+    </>
+  )
 }
 
-export default App
