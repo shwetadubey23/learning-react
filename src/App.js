@@ -1,44 +1,48 @@
-import React from 'react'
-
+import React, { useState } from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-
+import { Header } from './Component/Header'
+import { Footer } from './Component/Footer'
+import { CreateNote } from './Component/CreateNote'
+import { Note } from './Component/Note'
 
 
 
 export default function App() {
+  const [currentData, setCurrentData] = useState([])
+
+  const addingNote = (note) => {
+    setCurrentData((dataList) => {
+      return [...dataList, note]
+    });
+    console.log(note);
+  };
+
+  const deleteItem = (itemId) => {
+    setCurrentData((dataList) => {
+      return dataList.filter((removeData, index) => {
+        return index !== itemId
+      })
+    })
+  }
 
   return (
     <>
-    
-        <h1 className='text-center text-danger my-5' > Welcome To My Tech World </h1>
-        <div className="container">
-  <div className="row">
-    <div className="col-sm"> <div className="card" style={{width: "18rem"}}>
-  <img src="https://picsum.photos/200/301" className="card-img-top" alt="..." height={"200px"}/>
-  <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" className="btn btn-primary">Go somewhere</a>
-  </div>
-</div> </div>
-    <div className="col-sm"> <div className="card" style={{width: "18rem"}}>
-  <img src="https://picsum.photos/201/300" className="card-img-top" alt="..." height="200px"/>
-  <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" className="btn btn-primary">Go somewhere</a>
-  </div>
-</div> </div>
-    <div className="col-sm"> <div className="card" style={{width: "18rem"}}>
-  <img src="https://picsum.photos/202/300" className="card-img-top" alt="..." height= "200px" />
-  <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" className="btn btn-primary">Go somewhere</a>
-  </div>
-</div> </div>
-  </div>
-</div>
+      <Header />
+      <CreateNote passingNote={addingNote} />
+
+      {
+        currentData.map((item, index) => {
+          return <Note
+            itemId={index}
+            key={index}
+            title={item.title}
+            content={item.content}
+            onSelect={deleteItem}
+          />
+
+        })
+      }
+      <Footer />
     </>
   )
 }

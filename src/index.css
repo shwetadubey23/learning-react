@@ -2,114 +2,163 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
   /* background-color: #caedf5; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
-
-.h1 {
+.header {
   color: white;
   background: transparent;
-  background-color: #09f8ec;
-padding: 6px 0 2px 0;
-margin-bottom: 10px;
-width: 100%;
-box-shadow: 5px 5px 15px -5px rgba(0, 0, 0.3);
-}
-
-.main_div {
-  height: 100vh;
+  background-color: #8af8f3;
+  padding-left: 40px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
   width: 100%;
+  line-height: 80px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0.3);
+}
+
+/* Custom footer styles */
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
   text-align: center;
-  background: azure;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-justify-content: center;
-
+  bottom: 0;
+  position: absolute;
+  width: 100%;
 }
 
-.center_div {
-  width: 25%;
-  height: 60vh;
-  background-color: #f4f4f4;
-  border-radius: 15px;
-  box-shadow: 5px 5px 25px -5px rgba(0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.main_note {
+  width: 500px;
+  padding: 15px 10px 5px 10px;
+  margin: 20px auto;
 }
 
+.my_notes h1 {
+  color: #34495e;
+}
 
-button {
- min-height: 40px;
-/* width: 40px; */
-font-size: 20px;
-  background-color: lightskyblue;
-  color: #fff;
+.my_notes p {
+  color: gray;
+}
+
+form {
+  min-height: 50px;
+  color: white;
+  padding: 15px 10px 5px 10px;
+  box-shadow: 3px 5px 15px -5px black;
+  border-radius: 10px;
+  position: relative;
+}
+
+input {
+  width: 100%;
+  line-height: 30px;
+  background: transparent;
   border: none;
-  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
-  border-color: transparent;
-  border-radius: 5px;
   outline: none;
- margin-top: 30px;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  font-weight: bold;
 }
 
-button:hover {
-  background-color: mediumblue;
+textarea {
+  width: 100%;
+  line-height: 30px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  margin: 10px 0;
 }
 
-.btn_div {
-width: 100%;
-display: flex;
-justify-content: space-around;
-align-items: center;
-
+.main_note .btn {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  bottom: -10px;
+  left: 450px;
+  cursor: pointer;
+  /* background-color: #fff !important ; */
+  /* box-shadow: 5px 5px 15px -5px black; */
+  border-radius: 50% !important;
 }
 
-/* ul {
-  margin-top: 30px;
-}
-
-ul li {
-  padding-left: 0px;
-  text-align: left;
-  font-size: 20px;
-  min-height: 40px;
-  display: flex;
-  align-items: center;
-  color: #8566aa;
-  text-transform: capitalize;
+/* .main_note .btn {
+  font-size: 45px !important;
+  font-weight: 900;
+  color: #f4b400;
+  cursor: pointer;
+  z-index: 222;
+  background: transparent;
 } */
-
-.todo_style {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
+.MuiButton-root:hover {
+  background: #f43100 !important;
 }
 
-.todo_style .fa-times {
-  width: 20px;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #8566aa;
+.MuiButton-root:hover .plus_sign {
+  /* background: #f4b400 !important; */
+  color: #fff;
+  background: transparent;
+}
+
+.note {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0px 2px 5px #ccc;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+}
+
+.note h1 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+
+.note p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.note .btn {
+  position: relative;
+  float: right;
+  margin-right: 2px;
+  color: #f43100;
+  /* border:#8af8f3; */
+  width: 45px;
+  height: 45px;
+  background: transparent;
+  cursor: pointer;
+  outline: rgb(255, 52, 52);
+  box-shadow: 3px 3px 15px -10px rgba(0, 0, 0, alpha);
   border-radius: 50%;
-margin: 0 15px 0 35px;
-color: aliceblue;
-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
 }
 
-.todo_style .fa-times:hover {
-  background-color: crimson;
-  cursor: default ;
+.deleteIcon {
+  width: 0.7em;
+  height: 0.7em;
+}
+
+.note .btn:hover {
+  background-color: #f54813;
+}
+
+.note .btn:hover .deleteIcon {
+  color: #fff;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
 }
 
 @media (max-width: 786px) {
@@ -117,4 +166,3 @@ box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
     width: 55%;
   }
 }
-
