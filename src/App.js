@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { CompA } from './CompA'
 
-export default function App() {
-const [num, setNum] = useState(0);
-useEffect(() => {
-  document.title = `Yeh!! You Clicked Me ${num} times`
-})
-  
+export const App = () => {
   return (
-    <>
-    <button onClick={() => setNum(num + 1)}>Click Me {num}</button>
-    </>
+    <div>
+<CompA/>
+    </div>
   )
 }
