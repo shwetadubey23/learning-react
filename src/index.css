@@ -6,11 +6,22 @@
   /* background-color: #caedf5; */
 }
 
+a {
+color: aqua;
+}
+
 a.active_class {
-  color: red;
+  color: #ffffff;
   border-bottom: 1px solid red;
 }
 
+.menu_style {
+  width: 100%;
+  line-height: 60px;
+  background-color: #20232a;
+  display: flex;
+  justify-content: space-around;
+}
 
 @media (max-width: 786px) {
   .center_div {

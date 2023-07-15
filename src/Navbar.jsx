@@ -6,9 +6,10 @@ import { NavLink } from 'react-router-dom'
 
 export const Navbar = () => {
   return (
-    <div>
+    <nav className='menu_style'>
         <NavLink exact activeClassName="active_class" to='/'>AboutUs</NavLink>
         <NavLink activeClassName="active_class" to='/contact'>ContactUs</NavLink>
-    </div>
+        <NavLink activeClassName="active_class" to='/service'>Service</NavLink>
+    </nav>
   )
 }

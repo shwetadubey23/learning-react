@@ -5,6 +5,7 @@ import { About } from './About'
 import { Error } from './Error'
 import { Navbar } from './Navbar'
 import './index.css'
+import { Service } from './Service'
 
 export const App = () => {
 
@@ -16,10 +17,11 @@ const Name = () => {
     <>
     <Navbar/>
     <Routes>
-      <Route exact path= '/' Component={About} />
+      <Route exact path= '/' Component={() => <About name="AboutUs"/>} />
       <Route exact path= '/contact' Component={Contact} />
+      <Route exact path= '/service' render={() => <Service name="Service"/>} />
       <Route path= '/contact/Name' Component={Name} />
-      <Route  Component={Error} />   {/* Error wala work ni kr raha check karna hai*/}
+      <Route  Component={Error} />  
     </Routes>
 
     </>
