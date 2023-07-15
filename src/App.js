@@ -1,20 +1,31 @@
-import React, { createContext } from 'react'
-import CompoA from './CompoA'
+import React, { useEffect, useState } from 'react'
 
-const FirstName = createContext()
-const LastName = createContext()
- function App() {
+function App() {
+  const [num, setNum] = useState(0)
+  const [nums, setNums] = useState(0)
+
+  useEffect(() => {
+    alert("Yeh !! Clicked 😃 ")
+   
+  },[num]);
+
   return (
-   <>
-   <FirstName.Provider value={"Shweta"}>
-    <LastName.Provider value={"Dubey"}>
-     <CompoA/> 
-     </LastName.Provider >
-     </FirstName.Provider>
-     
-     </>
+    <div>
+      <button onClick={() => {
+        setNum(num + 1)
+      } }
+      >
+        Click me {num}
+      </button>
+      <br/>
+      <button onClick={() => {
+        setNums(nums + 1)
+      } }
+      >
+        Click me {nums}
+      </button>
+    </div>
   )
 }
 
 export default App
-export { FirstName, LastName }
