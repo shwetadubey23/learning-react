@@ -1,31 +1,14 @@
 import React, { useEffect, useState } from 'react'
 
-function App() {
-  const [num, setNum] = useState(0)
-  const [nums, setNums] = useState(0)
-
-  useEffect(() => {
-    alert("Yeh !! Clicked 😃 ")
-   
-  },[num]);
-
+export default function App() {
+const [num, setNum] = useState(0);
+useEffect(() => {
+  document.title = `Yeh!! You Clicked Me ${num} times`
+})
+  
   return (
-    <div>
-      <button onClick={() => {
-        setNum(num + 1)
-      } }
-      >
-        Click me {num}
-      </button>
-      <br/>
-      <button onClick={() => {
-        setNums(nums + 1)
-      } }
-      >
-        Click me {nums}
-      </button>
-    </div>
+    <>
+    <button onClick={() => setNum(num + 1)}>Click Me {num}</button>
+    </>
   )
 }
-
-export default App
