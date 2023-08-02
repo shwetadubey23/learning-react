@@ -12,6 +12,17 @@ setValueIncrem(valueIncrem+1)
       alert("reached 0 limite")
     } else
     setValueIncrem(valueIncrem-1)
+
+    // Other Method
+    // initialValue === 0 ? alert("You reached 0 limit") : setInitialValue(initialValue - 1)
+    
+  // if(initialValue === 0) {
+  //   alert("You reached 0 limit")
+  //   return;
+  // }
+  
+  // setInitialValue(initialValue - 1)
+    
   }
 
 return (
