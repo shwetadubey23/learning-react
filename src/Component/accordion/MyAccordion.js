@@ -8,7 +8,7 @@ export const MyAccordion = ({question, answer}) => {
   return (
     <>
     <div className='main-heading'>
-<p onClick={() => setShowData(!showData)}>{showData ? "➖" : "➕" }</p>
+<p onClick={() => setShowData(!showData)}>{showData ? "➖" : "➕" } </p>
 <h3 >{question}</h3>
     </div>
     { showData &&  <p className='answers'>{answer}</p> }
