@@ -6,6 +6,7 @@ import './accordion.css'
 
 const Accordion = () => {
     const [data, setData] = useState(question)
+    
     return (
         <>
         <section className="main-div">
